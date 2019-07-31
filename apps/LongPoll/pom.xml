@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.onosproject</groupId>
+		<artifactId>onos-apps</artifactId>
+		<version>1.7.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<groupId>org.onosproject</groupId>
+	<artifactId>LongPoll</artifactId>
+	<packaging>bundle</packaging>
+	<name>onos-app-LongPoll</name>
+
+	<description>MIRLAB Agent via http LongPoll</description>
+
+	<properties>
+		<onos.app.name>org.onosproject.LongPoll</onos.app.name>
+		<onos.app.origin>MIRLAB Hanyang</onos.app.origin>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20141113</version>
+		</dependency>
+	</dependencies>
+
+</project>

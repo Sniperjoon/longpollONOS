@@ -75,8 +75,8 @@ public class MQEventHandler extends AbstractProvider
     private DeviceListener deviceListener;
     protected ExecutorService eventExecutor;
 
-    private final InternalPacketProcessor packetProcessor =
-                                          new InternalPacketProcessor();
+//    private final InternalPacketProcessor packetProcessor =
+//                                         new InternalPacketProcessor();
     private final LinkListener linkListener = new InternalLinkListener();
     private final TopologyListener topologyListener =
                                            new InternalTopologyListener();
@@ -95,8 +95,8 @@ public class MQEventHandler extends AbstractProvider
                 groupedThreads("onos/deviceevents", "events-%d", log));
         deviceListener = new InternalDeviceListener();
         deviceService.addListener(deviceListener);
-        packetService.addProcessor(packetProcessor,
-                                   PacketProcessor.advisor(PKT_PROC_PRIO));
+//        packetService.addProcessor(packetProcessor,
+//                                   PacketProcessor.advisor(PKT_PROC_PRIO));
         linkService.addListener(linkListener);
         topologyService.addListener(topologyListener);
         log.info("Started");
@@ -105,7 +105,7 @@ public class MQEventHandler extends AbstractProvider
     @Deactivate
     protected void deactivate() {
         deviceService.removeListener(deviceListener);
-        packetService.removeProcessor(packetProcessor);
+//        packetService.removeProcessor(packetProcessor);
         eventExecutor.shutdownNow();
         eventExecutor = null;
         linkService.removeListener(linkListener);
@@ -132,7 +132,7 @@ public class MQEventHandler extends AbstractProvider
      * Captures incoming packets from switches connected to ONOS
      * controller..
      */
-    private class InternalPacketProcessor implements PacketProcessor {
+/*    private class InternalPacketProcessor implements PacketProcessor {
         @Override
         public void process(PacketContext context) {
             if (context == null) {
@@ -142,7 +142,7 @@ public class MQEventHandler extends AbstractProvider
             mqService.publish(context);
         }
     }
-
+*/
     /**
      * Listens to link events and processes the link additions.
      */

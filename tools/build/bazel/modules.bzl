@@ -248,6 +248,7 @@ ONOS_APPS = [
     "//apps/inbandtelemetry:onos-apps-inbandtelemetry-oar",
     # "//web/gui2:onos-web-gui2-oar",
     "//apps/workflow:onos-apps-workflow-oar",
+    "//apps/LongPolling:onos-apps-LongPolling-oar",
 ]
 
 PROTOCOL_APPS = [
